@@ -17,8 +17,7 @@ if not vim.loop.fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable releas
-    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
     lazypath,
   })
 end
@@ -31,6 +30,7 @@ local lsp = require('plugins.lsp')
 local plugins = { tree, theme, lsp }
 
 require("lazy").setup(plugins, opts)
+require("lazy").install()
 require('mason').setup()
 
 -- theme
